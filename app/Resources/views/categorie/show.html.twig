@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Categorie</h1>
+<div class="row">
+    <div class="box box-primary" style="max-width:300px; margin-left:20px;">
+            <div class="box-body box-profile">
+
+              <h3 class="profile-categoriename text-center">{{ categorie.name }}</h3>
+              <div class="row" style="display: inline-flex;margin: 0 auto;padding-left: 17%;">
+                  <div class="col" style="width: 33%; margin: 0 5px 0 5px;">
+                      <a class="btn btn-default btn-lg" href="{{ path('categorie_index') }}" title="Back to the list">
+                      <i class="fas fa-arrow-left"></i></a>
+
+                  </div>
+                  <div class="col" style="width: 33%; margin: 0 5px 0 5px;">
+                          <a class="btn btn-primary btn-lg" title="Edit" href="{{ path('categorie_edit', { 'id': categorie.id }) }}" ><i style="color: white" class="fas fa-pen"></i></a>
+
+                  </div>
+                  <div class="col" style="width: 33%; margin: 0 5px 0 5px;">
+                      
+
+
+                        <a class="btn btn-danger btn-lg" title="Delete {{ categorie.name }}" href="{{ path('categorie_delete', { 'id': categorie.id }) }}"><i class="fa fa-trash" style="color: white"></i></a>
+
+                  </div>
+              </div>
+
+              
+              
+
+                  
+            </div>
+            <!-- /.box-body -->
+          </div>
+
+  </div>
+  <!-- end of row -->
+
+{% endblock %}

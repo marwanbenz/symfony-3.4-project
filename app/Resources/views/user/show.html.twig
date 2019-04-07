@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>User</h1>
+<div class="row">
+    <div class="box box-primary" style="max-width:300px; margin-left:20px;">
+            <div class="box-body box-profile">
+              <img class="profile-user-img img-responsive img-circle" src="{{ asset('assets/dist/img/avatar2.png')}}" alt="User profile picture">
+
+              <h3 class="profile-username text-center">{{ user.name }}</h3>
+
+              <p class="text-muted text-center">{{ user.email }}</p>
+
+             
+              <div class="row" style="display: inline-flex;margin: 0 auto;padding-left: 17%;">
+                  <div class="col" style="width: 33%; margin: 0 5px 0 5px;">
+                      <a class="btn btn-default btn-lg" href="{{ path('user_index') }}" title="Back to the list">
+                      <i class="fas fa-arrow-left"></i></a>
+
+                  </div>
+                  <div class="col" style="width: 33%; margin: 0 5px 0 5px;">
+                          <a class="btn btn-primary btn-lg" title="Edit" href="{{ path('user_edit', { 'id': user.id }) }}" ><i style="color: white" class="fas fa-pen"></i></a>
+
+                  </div>
+                  <div class="col" style="width: 33%; margin: 0 5px 0 5px;">
+                      
+
+
+                        <a class="btn btn-danger btn-lg" title="Delete {{ user.name }}" href="{{ path('user_delete', { 'id': user.id }) }}"><i class="fa fa-trash" style="color: white"></i></a>
+
+                  </div>
+              </div>
+
+              
+              
+
+                  
+            </div>
+            <!-- /.box-body -->
+          </div>
+
+  </div>
+  <!-- end of row -->
+
+{% endblock %}

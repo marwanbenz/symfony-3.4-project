@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Product</h1>
+<div class="row">
+    <div class="box box-primary" style="max-width:300px; margin-left:20px;">
+            <div class="box-body box-profile">
+              <img class="profile-product-img img-responsive img-circle" style="width: 128px;height: 128px;margin: 10px auto;border-radius: 5px !important;" src="{{ asset('assets/dist/img/box.png')}}" alt="product profile picture">
+
+              <h3 class="profile-productname text-center">{{ product.name }}</h3>
+
+              <p class="text-muted text-center">{{ product.description }}</p>
+              <p class="text-muted text-center">{{ product.price }}</p>
+
+
+             
+              <div class="row" style="display: inline-flex;margin: 0 auto;padding-left: 17%;">
+                  <div class="col" style="width: 33%; margin: 0 5px 0 5px;">
+                      <a class="btn btn-default btn-lg" href="{{ path('product_index') }}" title="Back to the list">
+                      <i class="fas fa-arrow-left"></i></a>
+
+                  </div>
+                  <div class="col" style="width: 33%; margin: 0 5px 0 5px;">
+                          <a class="btn btn-primary btn-lg" title="Edit" href="{{ path('product_edit', { 'id': product.id }) }}" ><i style="color: white" class="fas fa-pen"></i></a>
+
+                  </div>
+                  <div class="col" style="width: 33%; margin: 0 5px 0 5px;">
+                      
+
+
+                        <a class="btn btn-danger btn-lg" title="Delete {{ product.name }}" href="{{ path('product_delete', { 'id': product.id }) }}"><i class="fa fa-trash" style="color: white"></i></a>
+
+                  </div>
+              </div>
+
+              
+              
+
+                  
+            </div>
+            <!-- /.box-body -->
+          </div>
+
+  </div>
+  <!-- end of row -->
+
+{% endblock %}
